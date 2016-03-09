@@ -25,6 +25,7 @@ Install the required dependencies
     pip install Flask-restless
     pip install Flask-sqlalchemy
     pip install Flask-cors
+    pip install flask-triangle 
     
 You are now ready to go!
 
