@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("http://localhost:5000/api/person").then(function (response) { //request is recorded in response 
+      $scope.myData = response.data.objects; //stores the JSON object in myData
+  });
+});
+</script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> <!-- using the customersCtrl controller -->
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone no.</th>
+  </tr>
+  <tr ng-repeat="x in myData"> <!-- loops over all objects in the JSON object -->
+    <td>{{x.name|angular}}</td> <!-- outputs the name -->
+    <td>{{x.phone|angular}}</td> <!-- outputs the phone number -->
+  </tr>
+</table>
+
+</div>
+
+
+
+</body>
+</html>
