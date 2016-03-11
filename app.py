@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app) #will not work without CORS support in the API
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///people.db'
 db = SQLAlchemy(app)
-# api=Api(app)
+# api=Api(app)	
 Triangle(app) #initialises Triangle constructor
 
 class Person(db.Model): #creates a database model for the Person object
@@ -23,11 +23,6 @@ class Person(db.Model): #creates a database model for the Person object
 def index():
 	return render_template('index.html',
                            title='Home')
-# class Views(Resource):
-# 	def index(self,todo_id):
-# 		return index.html
-
-# api.add_resource(Views,'/index.html')
 
 
 db.create_all() #initialises people.db in the directory with the given column names after starting server
