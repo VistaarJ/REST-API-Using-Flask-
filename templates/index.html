@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html>
+
+<!-- Some Styling for the Table (taken from w3schools) --> 
+<style> 
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script>
 var app = angular.module('myApp', []);
@@ -15,10 +33,12 @@ app.controller('customersCtrl', function($scope, $http) {
 
 <table>
   <tr>
+    <th>Index</th>
     <th>Name</th>
     <th>Phone no.</th>
   </tr>
-  <tr ng-repeat="x in myData"> <!-- loops over all objects in the JSON object -->
+  <tr ng-repeat="x in myData" > <!-- loops over all objects in the JSON object -->
+    <td>{{'$index+1'|angular}} <!-- It has to be recognized that $index is an angularJS variable-->
     <td>{{x.name|angular}}</td> <!-- outputs the name -->
     <td>{{x.phone|angular}}</td> <!-- outputs the phone number -->
   </tr>
