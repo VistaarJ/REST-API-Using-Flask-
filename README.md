@@ -38,7 +38,7 @@ Deploy the server
     http://localhost:5000/api/person should contain the entire list of people (with id,name and phone numbers) in JSON format
     http://localhost:5000/api/person/Name_of_person contains JSON response for person with Name as Name_of_person
    
-To see output using AngularJS in tabular format, open the index.html file in the REST-API-Using-Flask- directory using Firefox
+All the names and phone numbers will be output at http://localhost:5000 using AngularJS 
 
 ##Requests
 
