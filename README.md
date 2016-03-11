@@ -15,6 +15,10 @@ Go to the directory
 
     cd REST-API-Using-Flask-
   
+Create virtual environment
+
+    virtualenv venv
+
 Activate virtual environment
 
     . venv/bin/activate
